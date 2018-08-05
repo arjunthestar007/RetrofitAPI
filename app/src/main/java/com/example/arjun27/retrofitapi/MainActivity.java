@@ -3,6 +3,7 @@ package com.example.arjun27.retrofitapi;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,30 +41,18 @@ public class MainActivity extends AppCompatActivity {
 //           }
 //       });
 
-//       RetrofitFactory.getapi().getresponse().enqueue(new Callback<ResponseBody>() {
-//           @Override
-//           public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//
-//           }
-//
-//           @Override
-//           public void onFailure(Call<ResponseBody> call, Throwable t) {
-//
-//           }
-//       });
+       RetrofitFactory.getapi().getresponse().enqueue(new Callback<ResponseBody>() {
+           @Override
+           public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-        Task task = new Task(1, "my task title");
+           }
 
-        RetrofitFactory.getapi().gettask(task).enqueue(new Callback<Task>() {
-            @Override
-            public void onResponse(Call<Task> call, Response<Task> response) {
+           @Override
+           public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-            }
+           }
+       });
 
-            @Override
-            public void onFailure(Call<Task> call, Throwable t) {
 
-            }
-        });
     }
 }
